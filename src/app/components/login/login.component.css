@@ -1,16 +1,14 @@
-.login{
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-padding : 1rem;
-
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
-.login-form{
-    width: 25%;
-    border: 1px solid purple;
-    border-radius: 0.25rem;
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
+.login-form {
+  width: 25%;
+  border: 1px solid purple;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
 }

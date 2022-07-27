@@ -15,6 +15,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactusComponent },
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +43,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatFormFieldModule,
     MatInputModule,
     MatToolbarModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,6 +1,13 @@
-.navbar{
-    justify-content: space-between;
+.navbar {
+  justify-content: space-between;
 }
-span{
-    padding-right: 1rem;
+.link {
+  padding: 0 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.active {
+  color: cyan;
+  text-decoration: underline;
 }

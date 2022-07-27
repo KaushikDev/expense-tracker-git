@@ -1,9 +1,17 @@
 <mat-toolbar class="navbar" color="primary">
   <div>Logo Here</div>
   <div>
-    <span>Home</span>
-    <span>About</span>
-    <span>Contact Us</span>
-    <span>Login</span>
+    <a
+      class="link"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLink="/"
+      >Home</a
+    >
+    <a class="link" routerLinkActive="active" routerLink="/about">About</a>
+    <a class="link" routerLinkActive="active" routerLink="/contact"
+      >Contact Us</a
+    >
+    <a class="link" routerLinkActive="active" routerLink="/login">Login</a>
   </div>
 </mat-toolbar>
