@@ -1,30 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserExistsService } from 'src/app/services/user-exists.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
+  providers: [UserService],
 })
 export class HeaderComponent implements OnInit {
   btnLabel = '';
-  constructor(private router: Router, private userExists: UserExistsService) {}
+  constructor(private router: Router, private user: UserService) {}
 
   ngOnInit(): void {
-    if (this.userExists.checkUserExists()) {
-      this.btnLabel = this.userExists.btnLabel;
-    } else this.btnLabel = this.userExists.btnLabel;
+    this.btnLabel = this.user.getBtnLabel();
   }
 
   toggleLogin = () => {
-    if (this.userExists.checkUserExists()) {
-      this.btnLabel = this.userExists.btnLabel;
-      this.router.navigate(['/']);
-    } else {
-      localStorage.removeItem('user');
-      this.btnLabel = this.userExists.btnLabel;
-      this.router.navigate(['/']);
+    if (this.user.checkUserExists()) {
+      localStorage.clear();
     }
+    this.btnLabel = this.user.getBtnLabel();
+    this.router.navigate(['/']);
   };
 }
