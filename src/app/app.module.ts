@@ -18,8 +18,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactusComponent },
 ];
