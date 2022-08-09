@@ -18,6 +18,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule, Routes } from '@angular/router';
 import { BudgetsComponent } from './components/budgets/budgets.component';
+import { SingleBudgetComponent } from './components/budgets/single-budget/single-budget.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,8 +26,11 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactusComponent },
-  { path: 'budgets', component: BudgetsComponent },
-  { path: 'budgets/:id', component: AboutComponent },
+  {
+    path: 'budgets',
+    component: BudgetsComponent,
+  },
+  { path: 'budgets/:id', component: SingleBudgetComponent },
 ];
 
 @NgModule({
@@ -39,6 +43,7 @@ const appRoutes: Routes = [
     AboutComponent,
     ContactusComponent,
     BudgetsComponent,
+    SingleBudgetComponent,
   ],
   imports: [
     BrowserModule,

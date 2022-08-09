@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-budgets',
@@ -11,13 +11,13 @@ export class BudgetsComponent implements OnInit {
   toggleAddNewBudgetBtnLabel = 'Add New Budget';
   newBudgetTitle = '';
   newBudgetAmount: number = 0;
-  newBudgetId = Math.floor(Math.random() + 1);
+  newBudgetId = Math.floor(Math.random() * 1000);
 
   budgetList = [
     { id: this.newBudgetId, title: 'First Budget', amount: 50000 },
     { id: this.newBudgetId, title: 'Second Budget', amount: 32034 },
   ];
-  constructor(private router: Router) {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {}
 
@@ -46,6 +46,6 @@ export class BudgetsComponent implements OnInit {
   };
 
   viewBudgetPage = (id: number) => {
-    this.router.navigate([`/${id}`]);
+    this.router.navigate([id], { relativeTo: this.route });
   };
 }
