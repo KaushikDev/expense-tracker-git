@@ -10,6 +10,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
+import { BudgetsComponent } from './components/budgets/budgets.component';
+import { SingleBudgetComponent } from './components/budgets/single-budget/single-budget.component';
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,6 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule, Routes } from '@angular/router';
+import { CommComponent } from './components/comm/comm.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -41,6 +44,9 @@ const appRoutes: Routes = [
     HomeComponent,
     AboutComponent,
     ContactusComponent,
+    BudgetsComponent,
+    SingleBudgetComponent,
+    CommComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +57,8 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatToolbarModule,
+    MatTableModule,
+    MatCardModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],
