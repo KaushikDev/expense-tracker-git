@@ -11,11 +11,13 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { FormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule, Routes } from '@angular/router';
+import { CommComponent } from './components/comm/comm.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -33,6 +35,7 @@ const appRoutes: Routes = [
     HomeComponent,
     AboutComponent,
     ContactusComponent,
+    CommComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatToolbarModule,
+    MatTableModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],

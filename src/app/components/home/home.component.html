@@ -1,6 +1,8 @@
-<div *ngIf="checkUserExists; else userExists" class="home">
-  <h1>You're logged in</h1>
+<div class="home">
+  <div *ngIf="checkUserExists; else userExists">
+    <h1>You're logged in</h1>
+  </div>
+  <ng-template #userExists>
+    <h1>Welcome. Please <a href="#" routerLink="/">Login</a> to continue...</h1>
+  </ng-template>
 </div>
-<ng-template #userExists>
-  <h1>Welcome. Please <a href="#" routerLink="/">Login</a> to continue...</h1>
-</ng-template>

@@ -1,0 +1,13 @@
+.row,
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.header {
+  border: 1px solid gray;
+  padding: 0.25rem;
+}

@@ -1,0 +1,17 @@
+<h1>{{ title }}</h1>
+<p>{{ message }}</p>
+<button mat-button (click)="logThisInParentComp()">
+  Emit event to the Parent
+</button>
+<div class="header">
+  <span>Client</span>
+  <span>Orders</span>
+  <span>Views</span>
+  <span>Event Emitter</span>
+</div>
+<div class="row" *ngFor="let data of tableData">
+  <span>{{ data.client }}</span>
+  <span>{{ data.orders }}</span>
+  <span>{{ data.views }}</span>
+  <button mat-button (click)="launchTableEvent(data)">Emit Event</button>
+</div>
