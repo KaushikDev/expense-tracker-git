@@ -8,6 +8,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SingleBudgetComponent implements OnInit {
   ID: number = 0;
+  singleBudget: { id: number; title: string; amount: number } = {
+    id: 0,
+    title: 'No title',
+    amount: 0,
+  };
+
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
