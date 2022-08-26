@@ -1,0 +1,11 @@
+.singleBudget{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .budget-card{
+    width: 25%;
+    margin-top: 1rem;
+  }

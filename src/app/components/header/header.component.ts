@@ -21,6 +21,6 @@ export class HeaderComponent implements OnInit {
       localStorage.clear();
     }
     this.btnLabel = this.user.getBtnLabel();
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
   };
 }

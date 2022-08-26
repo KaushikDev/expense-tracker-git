@@ -1,0 +1,52 @@
+<div class="budgets">
+  <button mat-button color="primary" (click)="toggleNewBugetForm()">
+    {{ toggleAddNewBudgetBtnLabel }}
+  </button>
+  <div *ngIf="toggleNewBudgetForm" class="new-budget">
+    <form action="" type="submit" class="new-budget-form">
+      <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input
+          matInput
+          required
+          type="text"
+          name="title"
+          [(ngModel)]="newBudgetTitle"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Amount</mat-label>
+        <input
+          matInput
+          required
+          type="number"
+          name="amount"
+          [(ngModel)]="newBudgetAmount"
+        />
+      </mat-form-field>
+      <button
+        mat-button
+        type="submit"
+        color="primary"
+        class="save-budget-btn"
+        (click)="saveBudget()"
+      >
+        Save
+      </button>
+    </form>
+  </div>
+  <div class="all-budgets">
+    <!-- <ul>
+      <li *ngFor="let budget; in: budgetList"> -->
+    <mat-card *ngFor="let budget of budgetList" class="budget-card">
+      <mat-card-title>{{ budget.title }}</mat-card-title>
+      <mat-card-subtitle>{{ budget.amount }}</mat-card-subtitle>
+      <mat-card-actions>
+        <button mat-button (click)="viewBudgetPage(budget.id)">View</button
+        ><button mat-button>Edit</button><button mat-button>Delete</button>
+      </mat-card-actions>
+    </mat-card>
+    <!-- </li>
+    </ul> -->
+  </div>
+</div>

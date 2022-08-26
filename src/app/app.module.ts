@@ -16,14 +16,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
 import { RouterModule, Routes } from '@angular/router';
-import { CommComponent } from './components/comm/comm.component';
 
 const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactusComponent },
+  {
+    path: 'budgets',
+    component: BudgetsComponent,
+  },
+  { path: 'budgets/:id', component: SingleBudgetComponent },
 ];
 
 @NgModule({
@@ -35,7 +41,6 @@ const appRoutes: Routes = [
     HomeComponent,
     AboutComponent,
     ContactusComponent,
-    CommComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,6 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatToolbarModule,
-    MatTableModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],
