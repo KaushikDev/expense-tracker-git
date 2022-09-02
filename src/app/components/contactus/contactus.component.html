@@ -1,8 +1,5 @@
 <div class="contact">
   <app-comm
-    [title]="title"
-    [message]="message"
-    (childEvent)="showMessageInConsole($event)"
     [tableData]="tableData"
     (tableEvent)="showTableDataEmittedFromChild($event)"
   ></app-comm>

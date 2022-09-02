@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
+import { DetailService } from 'src/app/services/detail.service';
 
 @Component({
   selector: 'app-contactus',
@@ -6,10 +8,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contactus.component.css'],
 })
 export class ContactusComponent implements OnInit {
-  title = 'We would love to hear from you';
-  message =
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
-
   tableData: { client: string; orders: number; views: number }[] = [
     { client: 'abc', orders: 323, views: 92 },
     { client: 'def', orders: 123, views: 94 },
@@ -22,14 +20,13 @@ export class ContactusComponent implements OnInit {
     { client: 'yz', orders: 353, views: 90 },
   ];
 
-  constructor() {}
+  constructor(private router: Router, private detailService: DetailService) {}
 
   ngOnInit(): void {}
 
-  showMessageInConsole(event: any) {
-    console.log(event);
-  }
   showTableDataEmittedFromChild(event: any) {
-    console.log(event);
+    this.router.navigate(['/details']);
+    this.detailService.ob.next(event);
+    // console.log(event);
   }
 }
